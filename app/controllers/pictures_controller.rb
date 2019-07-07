@@ -14,7 +14,15 @@ class PicturesController < ApplicationController
 
   # GET /pictures/new
   def new
-    @picture = Picture.new
+     if params[:back]
+       @picture = Picture.new(picture_params)
+     else
+       @picture = Picture.new
+     end
+  end
+
+  def confirm
+    @picture = Picture.new(picture_params)
   end
 
   # GET /pictures/1/edit
@@ -24,7 +32,8 @@ class PicturesController < ApplicationController
   # POST /pictures
   # POST /pictures.json
   def create
-    @picture = Picture.new(picture_params)
+    @picture = current_user.pictures.build(picture_params)
+    binding.pry
 
     respond_to do |format|
       if @picture.save
@@ -69,6 +78,6 @@ class PicturesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def picture_params
-      params.require(:picture).permit(:image, :content, :user)
+      params.require(:picture).permit(:image, :image_cache, :content, :user_id)
     end
 end
