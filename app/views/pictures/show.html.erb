@@ -1,16 +1,16 @@
 <p>
-  <strong>写真:</strong>
-  <%= image_tag @picture.image.url %>
+   <strong>写真:</strong>
+   <%= image_tag @picture.image.url %>
 </p>
 
 <p>
-  <strong>コンテンツ:</strong>
-  <%= @picture.content %>
+   <strong>コンテンツ:</strong>
+   <%= @picture.content %>
 </p>
 
 <p>
-  <strong>ユーザー名:</strong>
-  <%= @picture.user.name %>
+   <strong>ユーザー名:</strong>
+   <%= @picture.user.name %>
 </p>
 
 <%= link_to 'Edit', edit_picture_path(@picture) %> |

@@ -1,28 +1,28 @@
 <h1>投稿一覧</h1>
 
 <table>
-  <thead>
-    <div>
-      <span>画像</span>
-      <span>コンテンツ</span>
-      <span>ユーザー名</span>
-    </div>
-  </thead>
+   <thead>
+     <div>
+       <span>画像</span>
+       <span>コンテンツ</span>
+       <span>ユーザー名</span>
+     </div>
+   </thead>
 
-  <tbody>
-    <% @pictures.each do |picture| %>
-      <div>
-        <p><%= image_tag picture.image.url %></p>
-        <p><%= picture.content %></p>
-        <p><%= picture.user.name %></p>
-        <span><%= link_to '表示', picture %></span>
-        <span><%= link_to '編集', edit_picture_path(picture) %></span>
-        <span><%= link_to '削除', picture, method: :delete, data: { confirm: 'Are you sure?' } %></span>
-      </div>
-    <% end %>
-  </tbody>
+   <tbody>
+     <% @pictures.each do |picture| %>
+       <div>
+         <p><%= image_tag picture.image.url %></p>
+         <p><%= picture.content %></p>
+         <p><%= picture.user.name %></p>
+         <span><%= link_to '表示', picture %></span>
+         <span><%= link_to '編集', edit_picture_path(picture) %></span>
+         <span><%= link_to '削除', picture, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+       </div>
+     <% end %>
+   </tbody>
 </table>
 
 <br>
 
-<%= link_to '新しい写真を投稿', new_picture_path %>
+<%= link_to '写真を投稿', new_picture_path %>
