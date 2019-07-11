@@ -1,6 +1,13 @@
-ActiveRecord::Schema.define(version: 2019_07_06_223506) do
+ActiveRecord::Schema.define(version: 2019_07_10_140721) do
 
   enable_extension "plpgsql"
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "picture_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "pictures", force: :cascade do |t|
     t.text "image"
