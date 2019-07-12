@@ -1,25 +1,19 @@
-<h1>投稿一覧</h1>
+<h1 class="alert alert-success">投稿一覧</h1>
 
 <table>
-   <thead>
-     <div class="container">
-       <ul class="row">
-         <span class="col-md-4">画像</span>
-         <span class="col-md-4">コンテンツ</span>
-         <span class="col-md-4">ユーザー名</span>
-         </ul>
-     </div>
-   </thead>
 
    <tbody>
      <% @pictures.each do |picture| %>
        <div>
-         <p><%= image_tag picture.image.url %></p>
+         <span>ユーザー名:</span>
+         <span><%= picture.user.name %></span><br>
+         <span> コメント</span>
          <p><%= picture.content %></p>
-         <p><%= picture.user.name %></p>
-         <span><%= link_to '表示', picture %></span>
-         <span><%= link_to '編集', edit_picture_path(picture) %></span>
-         <span><%= link_to '削除', picture, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+         <p><%= image_tag picture.image.url %></p>
+
+         <span><%= link_to '表示', picture,class: 'btn btn-default'  %></span>
+         <span><%= link_to '編集', edit_picture_path(picture),class: 'btn btn-default'  %></span>
+         <span><%= link_to '削除', picture, method: :delete, data: { confirm: 'Are you sure?' },class: 'btn btn-default'  %></span>
        </div>
      <% end %>
    </tbody>
@@ -27,4 +21,4 @@
 
 <br>
 
-<%= link_to '写真を投稿', new_picture_path %>
+<%= link_to '写真を投稿', new_picture_path,class: 'btn btn-info' %>
