@@ -20,5 +20,6 @@
 </table>
 
 <br>
-
-<%= link_to '写真を投稿', new_picture_path,class: 'btn btn-info' %>
+<% if logged_in? %>
+  <%= link_to '写真を投稿', new_picture_path,class: 'btn btn-info' %>
+<% end %>
