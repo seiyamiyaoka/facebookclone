@@ -20,3 +20,14 @@ module Facebookclone
     config.assets.initialize_on_precompile = false
   end
 end
+
+module YourApp
+  class Application < Rails::Application
+    #...
+    config.generators do |g|
+      g.assets     false
+      g.helper     false
+    end
+    #...
+  end
+end
