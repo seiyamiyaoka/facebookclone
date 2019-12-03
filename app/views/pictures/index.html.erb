@@ -11,9 +11,9 @@
          <p><%= picture.content %></p>
          <p><%= image_tag picture.image.url %></p>
       <% if logged_in? %>
-         <span><%= link_to '詳細', picture,class: 'btn btn-default'  %></span>
-         <span><%= link_to '編集', edit_picture_path(picture),class: 'btn btn-default'  %></span>
-         <span><%= link_to '削除', picture, method: :delete, data: { confirm: 'Are you sure?' },class: 'btn btn-default'  %></span>
+         <span><%= button_to '詳細', picture,class: 'btn btn-default'  %></span>
+         <span><%= button_to '編集', edit_picture_path(picture),class: 'btn btn-default'  %></span>
+         <span><%= button_to '削除', picture, method: :delete, data: { confirm: 'Are you sure?' },class: 'btn btn-default'  %></span>
       <% end %>
        </div>
      <% end %>
@@ -22,5 +22,5 @@
 
 <br>
 <% if logged_in? %>
-  <%= link_to '写真を投稿', new_picture_path,class: 'btn btn-info' %>
+  <%= button_to '写真を投稿', new_picture_path,class: 'btn btn-info' %>
 <% end %>
