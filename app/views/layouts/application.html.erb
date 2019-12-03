@@ -13,11 +13,11 @@
       <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>
       <% if logged_in? %>
-      <%= button_to "プロフィル", user_path(current_user.id) %>
-      <%= button_to "ログアウト", session_path(current_user.id), method: :delete %>
+      <%= link_to "プロフィル", user_path(current_user.id) %>
+      <%= link_to "ログアウト", session_path(current_user.id), method: :delete %>
       <% else %>
-      <%= button_to "サインアップ", new_user_path %>
-      <%= button_to "ログイン", new_session_path %>
+      <%= link_to "サインアップ", new_user_path %>
+      <%= link_to "ログイン", new_session_path %>
       <% end %>
 
     <%= yield %>
