@@ -6,7 +6,7 @@ set :application, 'facebookclone'
 
 # cloneするgitのレポジトリ
 # （xxxxxxxx：ユーザ名、yyyyyyyy：アプリケーション名）
-set :repo_url, 'https://github.com/abeyasumasa/facebookclone'
+set :repo_url, 'git@github.com:abeyasumasa/facebookclone.git'
 
 # deployするブランチ。デフォルトはmasterなのでなくても可。
 set :branch, ENV['BRANCH'] || 'master'
