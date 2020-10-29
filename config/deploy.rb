@@ -6,7 +6,7 @@ set :application, 'facebookclone'
 
 # cloneするgitのレポジトリ
 # （xxxxxxxx：ユーザ名、yyyyyyyy：アプリケーション名）
-set :repo_url, 'git@github.com:abeyasumasa/facebookclone.git'
+set :repo_url, 'git@github.com:seiyamiyaoka/facebookclone.git'
 
 # deployするブランチ。デフォルトはmasterなのでなくても可。
 set :branch, ENV['BRANCH'] || 'master'
@@ -22,7 +22,7 @@ set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets public/uploads}
 set :keep_releases, 5
 
 # Rubyのバージョン
-set :rbenv_ruby, '2.6.3'
+set :rbenv_ruby, '2.6.5'
 set :rbenv_type, :system
 
 # 出力するログのレベル。エラーログを詳細に見たい場合は :debug に設定する。
